@@ -6,4 +6,4 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 ![binarySearch](binarySearch.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+binary search complexity : O(logn)
