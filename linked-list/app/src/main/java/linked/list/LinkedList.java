@@ -30,4 +30,41 @@ public class LinkedList<T> {
         result += "NULL";
         return result;
     }
+
+    public void append(T value){
+        Node newNode = new Node<T>(value);
+        Node now = head;
+        while (now.nextNode != null){
+            now = now.nextNode;
+        }
+        now.nextNode = newNode;
+    }
+
+    public void insertBefore(T position, T value){
+        Node newNode = new Node<T>(value);
+        Node now = head;
+        if(  now.value == position ) {
+            newNode.nextNode = now;
+            now=newNode;
+            head = newNode;
+        }
+        else {
+            while (now.nextNode.value != position) {
+                now = now.nextNode;
+            }
+            newNode.nextNode = now.nextNode;
+            now.nextNode = newNode;
+        }
+
+    }
+
+    public void insertAfter(T position , T value){
+        Node newNode = new Node<T>(value);
+        Node now = head;
+        while (now.value != position){
+            now = now.nextNode;
+        }
+        newNode.nextNode = now.nextNode;
+        now.nextNode = newNode ;
+    }
 }
