@@ -43,4 +43,42 @@ class AppTest {
         newLinkedList.insert(70);
         assertEquals("{ 70 } -> { 46 } -> { 43 } -> { 42 } -> { 45 } -> NULL",newLinkedList.toString());
     }
+    @Test void addNodesToTheEndOfTheLinkedList(){
+        newLinkedList.insert(45);
+        newLinkedList.insert(42);
+        newLinkedList.insert(43);
+        newLinkedList.append(30);
+        assertEquals("{ 43 } -> { 42 } -> { 45 } -> { 30 } -> NULL",newLinkedList.toString());
+        newLinkedList.append(20);
+        newLinkedList.append(50);
+        newLinkedList.append(12);
+        assertEquals("{ 43 } -> { 42 } -> { 45 } -> { 30 } -> { 20 } -> { 50 } -> { 12 } -> NULL",newLinkedList.toString());
+
+    }
+
+    @Test void  insertANodeBeforeANode(){
+        newLinkedList.insert(30);
+        newLinkedList.insert(42);
+        newLinkedList.insert(67);
+        newLinkedList.insert(23);
+        newLinkedList.insert(70);// inserting a node before the first node
+        newLinkedList.insertBefore(67,11);
+        assertEquals("{ 70 } -> { 23 } -> { 11 } -> { 67 } -> { 42 } -> { 30 } -> NULL",newLinkedList.toString());
+        newLinkedList.insertBefore(70,12);
+        assertEquals("{ 12 } -> { 70 } -> { 23 } -> { 11 } -> { 67 } -> { 42 } -> { 30 } -> NULL",newLinkedList.toString());
+    }
+    @Test void insertAfter(){
+        newLinkedList.insert(30);
+        newLinkedList.insert(42);
+        newLinkedList.insert(67);
+        newLinkedList.insert(23);
+        newLinkedList.insert(70);
+        newLinkedList.insertAfter(67,5);
+        assertEquals("{ 70 } -> { 23 } -> { 67 } -> { 5 } -> { 42 } -> { 30 } -> NULL",newLinkedList.toString());
+        newLinkedList.insertAfter(30,2);
+        assertEquals("{ 70 } -> { 23 } -> { 67 } -> { 5 } -> { 42 } -> { 30 } -> { 2 } -> NULL",newLinkedList.toString());
+    }
+
+
+
 }

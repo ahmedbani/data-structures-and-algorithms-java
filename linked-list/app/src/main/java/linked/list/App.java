@@ -11,6 +11,9 @@ public class App {
         ahmedsLinkedList.insert(5);
         ahmedsLinkedList.insert(6);
         ahmedsLinkedList.insert(10);
+        ahmedsLinkedList.append(20);
+        ahmedsLinkedList.insertBefore(5,34);
+        ahmedsLinkedList.insertAfter(6,22);
 
         System.out.println(ahmedsLinkedList.toString());
 
