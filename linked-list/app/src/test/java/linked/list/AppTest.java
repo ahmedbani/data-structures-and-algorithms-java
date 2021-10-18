@@ -78,7 +78,15 @@ class AppTest {
         newLinkedList.insertAfter(30,2);
         assertEquals("{ 70 } -> { 23 } -> { 67 } -> { 5 } -> { 42 } -> { 30 } -> { 2 } -> NULL",newLinkedList.toString());
     }
-
+    @Test void testKth(){
+        newLinkedList.insert(30);
+        newLinkedList.insert(42);
+        newLinkedList.insert(67);
+        newLinkedList.insert(23);
+        newLinkedList.insert(70);
+        assertEquals(67,newLinkedList.kthFromEnd(2));
+        assertEquals("the numbered passed is bigger than the linked list",newLinkedList.kthFromEnd(10));
+    }
 
 
 }

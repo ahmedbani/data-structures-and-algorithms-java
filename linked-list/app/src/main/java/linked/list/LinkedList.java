@@ -67,4 +67,24 @@ public class LinkedList<T> {
         newNode.nextNode = now.nextNode;
         now.nextNode = newNode ;
     }
+
+    public T kthFromEnd(int k){
+        Node current = head;
+        int length = 0;
+        while (current!= null){
+            current = current.nextNode;
+            length++;
+        }
+        if( k >= length){
+            return (T)"the numbered passed is bigger than the linked list";
+        }
+        else {
+            current = head;
+            for (int i = 0; i < length - k - 1; i++) {
+                current = current.nextNode;
+            }
+            return (T) current.value;
+        }
+
+    }
 }
