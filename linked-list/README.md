@@ -62,3 +62,34 @@ output: head -> [1] -> [5] -> [3] -> [2] -> X
 insertAfter:  
 input: 3, 5  
 output : head -> [1] -> [3] -> [5] -> [2] -> X
+
+# Challenge Summary
+
+create a method that takes an integer (k) as an argument and return the value of the nodes k'th place from the tail
+
+## Whiteboard Process
+![whiteboard](whiteboards/linkedList2.png)
+
+## Approach & Efficiency
+
+time complexity : O(n), cause here we have two arrays which are not nested the first on will run n times based on the length of the linked list and the second one will run n times based on the valued passed so its O(n+n) = O(n)
+space complexity: O(1) , cause we are not storing variables more than once , and only reassigning 
+
+## Solution
+
+- count the length of the linked list using a while loop
+- if the value passed (k) is bigger than the length of the linked list return the value is larger than the linked list
+- else make a loop till the length - n -1
+- when the loop finishes the current will be on the kith node from the last
+- return the value of the k'th node
+
+verification:
+linked list: { 10 } -> { 6 } -> { 22 } -> { 34 } -> { 5 } -> { 10 } -> { 20 } -> NULL
+
+Input : 3
+
+output : 34
+
+input: 8
+
+output: the number passed is bigger than the linked list

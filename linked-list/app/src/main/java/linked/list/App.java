@@ -17,7 +17,9 @@ public class App {
 
         System.out.println(ahmedsLinkedList.toString());
 
-        System.out.println(ahmedsLinkedList.includes(8));
+        System.out.println(ahmedsLinkedList.includes(3));
+
+        System.out.println(ahmedsLinkedList.kthFromEnd(3));
 
     }
 }
