@@ -87,6 +87,23 @@ class AppTest {
         assertEquals(67,newLinkedList.kthFromEnd(2));
         assertEquals("the numbered passed is bigger than the linked list",newLinkedList.kthFromEnd(10));
     }
+    @Test void testZip(){
+        LinkedList linkedList1 = new LinkedList<Integer>();
+        linkedList1.insert(10);
+        linkedList1.insert(5);
+        linkedList1.insert(6);
+        linkedList1.insert(10);
+        linkedList1.append(20);
+        LinkedList linkedList2 = new LinkedList<Integer>();
 
+        linkedList2.insert(12);
+        linkedList2.insert(12);
+        linkedList2.insert(12);
+        linkedList2.insert(12);
+        linkedList2.insert(12);
+        linkedList2.insert(12);
+
+        assertEquals("{ 10 } -> { 12 } -> { 6 } -> { 12 } -> { 5 } -> { 12 } -> { 10 } -> { 12 } -> { 20 } -> { 12 } -> { 12 } -> NULL",newLinkedList.zipLists(linkedList1,linkedList2).toString());
+    }
 
 }

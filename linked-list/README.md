@@ -93,3 +93,27 @@ output : 34
 input: 8
 
 output: the number passed is bigger than the linked list
+
+# Challenge Summary
+
+create a function that takes in Arguments: 2 linked lists and Return: Linked List,
+Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
+
+## Whiteboard Process
+
+![whiteboard](whiteboards/linkedListZip.png)
+
+## Approach & Efficiency
+
+Complexity:  
+time complexity:O(n)  
+space Complexity: O(n)
+
+## Solution
+verification:  
+input:(list1,list2)
+
+list1:head -> [1] -> [3] -> [2] -> X  
+list2:head -> [5] -> [9] -> [4] -> X  
+
+output: head -> [1] -> [5] -> [3] -> [9] -> [2] -> [4] -> X
