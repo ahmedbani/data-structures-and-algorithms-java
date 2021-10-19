@@ -17,9 +17,27 @@ public class App {
 
         System.out.println(ahmedsLinkedList.toString());
 
-        System.out.println(ahmedsLinkedList.includes(3));
+//        System.out.println(ahmedsLinkedList.includes(3));
 
-        System.out.println(ahmedsLinkedList.kthFromEnd(3));
+//        System.out.println(ahmedsLinkedList.kthFromEnd(3));
+
+        LinkedList newLinkedList = new LinkedList<Integer>();
+
+        newLinkedList.insert(12);
+        newLinkedList.insert(12);
+        newLinkedList.insert(12);
+        newLinkedList.insert(12);
+        newLinkedList.insert(12);
+        newLinkedList.insert(12);
+
+        System.out.println(newLinkedList.toString());
+
+        LinkedList zip = new LinkedList<Integer>();
+
+        System.out.println(zip);
+
+
+        System.out.println(zip.zipLists(ahmedsLinkedList,newLinkedList));
 
     }
 }

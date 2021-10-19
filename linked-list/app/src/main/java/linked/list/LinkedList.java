@@ -4,6 +4,14 @@ public class LinkedList<T> {
     Node<T> head ;
 
 
+    public Node<T> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<T> head) {
+        this.head = head;
+    }
+
     public void insert(T value){
         Node newNode = new Node<T>(value);
         newNode.nextNode= head;
@@ -86,5 +94,43 @@ public class LinkedList<T> {
             return (T) current.value;
         }
 
+    }
+
+    public LinkedList<T> zipLists(LinkedList list1, LinkedList list2){
+        LinkedList zippedList = new LinkedList();
+        if (list1 == null && list2 == null) {
+            return zippedList;
+        }
+        else if (list1 == null || list2 == null){
+            return list1 == null?list2:list1;
+        }
+        else {
+            Node current1 = list1.head;
+            Node current2 = list2.head;
+            Node headNode = new Node(current1.value);
+            Node node = new Node(current2.value);
+            headNode.nextNode = zippedList.head;
+            zippedList.head = headNode;
+            Node zippedListCurrent = zippedList.head;
+            zippedListCurrent.nextNode = node;
+            zippedListCurrent = zippedListCurrent.nextNode;
+            while (current1.nextNode != null || current2.nextNode != null){
+
+                if(current1.nextNode != null) {
+                    current1 = current1.nextNode;
+                    Node nodeFromList1 = new Node(current1.value);
+                    zippedListCurrent.nextNode = nodeFromList1;
+                    zippedListCurrent=zippedListCurrent.nextNode;
+                }
+                if(current2.nextNode != null) {
+                    current2 = current2.nextNode;
+                    Node nodeFromList2 = new Node(current2.value);
+                    zippedListCurrent.nextNode = nodeFromList2;
+                    zippedListCurrent=zippedListCurrent.nextNode;
+                }
+            }
+            return zippedList;
+
+        }
     }
 }
