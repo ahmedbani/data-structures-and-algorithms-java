@@ -11,3 +11,4 @@
 | LinkedList insertions |[LinkedList-insertions](https://ahmedbani.github.io/data-structures-and-algorithms-java/linked-list)|
 | kth number from the end |[LinkedList](https://ahmedbani.github.io/data-structures-and-algorithms-java/linked-list)|
 | zip two linked lists |[LinkedList-zip](https://ahmedbani.github.io/data-structures-and-algorithms-java/linked-list)|
+| stacks and queues |[stack-queue](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
