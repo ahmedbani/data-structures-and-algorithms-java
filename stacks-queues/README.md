@@ -39,3 +39,24 @@ Space complexity: **O(1)**
 - dequeue: delete a node from the begining of the queue 
 - peek: return the value of the next node on the stack or queue
 - isEmpty: check wheather the stack or queue is empty
+
+# Challenge Summary
+have a queue made of 2 stacks and perform enqueue and dequeue in a FIFO order.
+
+## Whiteboard Process
+
+![whiteboard](stackQueuePseudo.png)
+
+## Approach & Efficiency
+complexity:  
+enqueue : O(n)  
+dequeue:O(1)  
+
+## Solution
+Verification:
+queue: [10]->[15]->[20]  
+enqueue input: 5  
+output: [5]->[10]->[15]->[20]  
+
+dequeue input: none   
+dequeue output: 20 [5]->[10]->[15]  
