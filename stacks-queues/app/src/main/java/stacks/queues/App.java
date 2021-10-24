@@ -34,5 +34,16 @@ public class App {
         System.out.println(newQueue.peek());
         System.out.println(newQueue.isEmpty());
 
+        Stack f = new Stack();
+        PseudoQueue pseudoQueue = new PseudoQueue(newStack,f);
+
+        pseudoQueue.enqueue(5);
+        pseudoQueue.enqueue(10);
+        pseudoQueue.dequeue();
+        System.out.println(pseudoQueue.toString());
+        System.out.println(pseudoQueue.dequeue());
+        System.out.println(pseudoQueue.toString());
+
+
     }
 }

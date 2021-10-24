@@ -63,4 +63,18 @@ class AppTest {
         assertEquals("the queue is empty",newQueue.dequeue());
         assertEquals("the queue is empty",newQueue.peek());
     }
+    @Test void testPseudoQueue(){
+        Stack stack1 = new Stack();
+        Stack stack2 = new Stack();
+        PseudoQueue pseudoQueue = new PseudoQueue(stack1,stack2);
+        pseudoQueue.enqueue(15);
+        pseudoQueue.enqueue(4);
+        pseudoQueue.enqueue(20);
+        assertEquals("pseudoQueue{{ 15 } -> { 4 } -> { 20 } -> NULL}",pseudoQueue.toString());
+        pseudoQueue.dequeue();
+        assertEquals("pseudoQueue{{ 4 } -> { 20 } -> NULL}",pseudoQueue.toString());
+        assertEquals(4,pseudoQueue.dequeue());
+        pseudoQueue.dequeue();
+        assertEquals("the queue is empty",pseudoQueue.dequeue());
+    }
 }
