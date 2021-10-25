@@ -44,6 +44,16 @@ public class App {
         System.out.println(pseudoQueue.dequeue());
         System.out.println(pseudoQueue.toString());
 
+        Cats cat = new Cats(4,"fluffy");
+        Dogs dog = new Dogs(3,"floki");
+        AnimalShelter animalShelter = new AnimalShelter();
+        animalShelter.enqueue(cat);
+        System.out.println(animalShelter.toString());
+        System.out.println(animalShelter.dequeue("dog"));
+        animalShelter.enqueue(dog);
+        System.out.println(animalShelter.toString());
+        System.out.println(animalShelter.dequeue("cat"));
+        System.out.println(animalShelter.toString());
 
     }
 }

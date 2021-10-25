@@ -13,3 +13,4 @@
 | zip two linked lists |[LinkedList-zip](https://ahmedbani.github.io/data-structures-and-algorithms-java/linked-list)|
 | stacks and queues |[stack-queue](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
 | Pseudo queue |[pseudo-queue](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
+| Animal shelter |[animal-shelter](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
