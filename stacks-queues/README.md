@@ -59,4 +59,39 @@ enqueue input: 5
 output: [5]->[10]->[15]->[20]  
 
 dequeue input: none   
-dequeue output: 20 [5]->[10]->[15]  
+dequeue output: 20 [5]->[10]->[15] 
+
+# Challenge Summary
+
+Create a class called AnimalShelter which holds only dogs and cats, The shelter operates FIFO and has two methods  
+enqueue(animal)   
+  input: an object  
+  no output  
+dequeue(String)  
+  input : String  
+  output: object  
+
+
+## Whiteboard Process
+
+![whiteboard](animalShelter.png)
+
+## Approach & Efficiency
+
+complexity:  
+time & space = O(1) for both methods
+
+## Solution
+
+- create animal class
+- create cats class that extends the animal
+- create dogs class that extends the animal
+- create a animal shelter class that extends the queue class and put two queue as properties in it one dogs queue and the second cats queue
+- create enqueue method that takes in an animal object as an argument 
+- check if the animal is an instance of the cats class enqueue to the cats queue
+- else if the animal is an instance of the dogs class enqueue to the dogs queue
+- in the dequeue method it takes a string as an argument
+- if the string equals dog check if the dogs queue is empty return that its empty else dequeue from the dogs queue and return the object
+- else if the string equals cat check if the cats queue is empty return that its empty else dequeue from the cats queue and return the object
+- else return null
+

@@ -77,4 +77,17 @@ class AppTest {
         pseudoQueue.dequeue();
         assertEquals("the queue is empty",pseudoQueue.dequeue());
     }
+    @Test void testAnimalShelter(){
+        Cats cat = new Cats(4,"fluffy");
+        Dogs dog = new Dogs(3,"floki");
+        AnimalShelter animalShelter = new AnimalShelter();
+        animalShelter.enqueue(cat);
+        assertFalse(animalShelter.cats.isEmpty());
+        assertEquals("dogs=NULL, cats={ age=4, name='fluffy } -> NULL",animalShelter.toString());
+        assertEquals("there is no dogs",animalShelter.dequeue("dog"));
+        animalShelter.enqueue(dog);
+        assertEquals("dogs={ age=3, name='floki } -> NULL, cats={ age=4, name='fluffy } -> NULL",animalShelter.toString());
+        animalShelter.dequeue("cat");
+        assertTrue(animalShelter.cats.isEmpty());
+    }
 }
