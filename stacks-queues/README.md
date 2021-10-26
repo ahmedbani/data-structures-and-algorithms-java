@@ -45,7 +45,7 @@ have a queue made of 2 stacks and perform enqueue and dequeue in a FIFO order.
 
 ## Whiteboard Process
 
-![whiteboard](stackQueuePseudo.png)
+![whiteboard](whiteboards/stackQueuePseudo.png)
 
 ## Approach & Efficiency
 complexity:  
@@ -74,7 +74,7 @@ dequeue(String)
 
 ## Whiteboard Process
 
-![whiteboard](animalShelter.png)
+![whiteboard](whiteboards/animalShelter.png)
 
 ## Approach & Efficiency
 
@@ -95,3 +95,27 @@ time & space = O(1) for both methods
 - else if the string equals cat check if the cats queue is empty return that its empty else dequeue from the cats queue and return the object
 - else return null
 
+# Challenge Summary
+
+create a function that checks whether the brackets are balanced  
+input: String  
+output: boolean  
+
+## Whiteboard Process
+
+![whiteboard](whiteboards/brackets.png)
+
+## Approach & Efficiency
+
+complexity:  
+time & space complexity: O(n)
+
+## Solution
+
+Verification:
+
+input : "()[[Extra Characters]]"  
+output: TRUE  
+
+input:"[({}]"  
+output: false  

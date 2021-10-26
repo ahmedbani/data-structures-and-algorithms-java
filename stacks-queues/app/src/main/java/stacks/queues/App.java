@@ -54,6 +54,45 @@ public class App {
         System.out.println(animalShelter.toString());
         System.out.println(animalShelter.dequeue("cat"));
         System.out.println(animalShelter.toString());
+        System.out.println("CC13");
+        System.out.println(bracketValidation("{}"));
+        System.out.println(bracketValidation("{}(){}"));
+        System.out.println(bracketValidation("()[[Extra Characters]]"));
+        System.out.println(bracketValidation("{}{Code}[Fellows](())"));
+        System.out.println(bracketValidation("{(})"));
+        System.out.println(bracketValidation("[({}]"));
+        System.out.println(bracketValidation(""));
 
+    }
+
+    // made the return type object cause if string passed is empty it will tell the user that there is nothing to check
+    public static Object bracketValidation(String str){
+        Stack stack = new Stack();
+        char check;
+        if (str.length() > 0) {
+            for (int i = 0; i < str.length(); i++) {
+                check = str.charAt(i);
+                if (check == '{' || check == '[' || check == '(')
+                    stack.push(check);
+                else if (check == '}' || check == ']' || check == ')') {
+                    if (check == '}')
+                        if (stack.peek() == (Character) '{') {
+                            stack.pop();
+                            continue;
+                        }
+                    if (check == ']')
+                        if (stack.peek() == (Character) '[') {
+                            stack.pop();
+                            continue;
+                        }
+                    if (stack.peek() == (Character) '(') {
+                        stack.pop();
+                        continue;
+                    }
+                } else continue;
+            }
+            return stack.isEmpty();
+        }
+        else return "there is nothing to check";
     }
 }

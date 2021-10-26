@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+    App app = new App();
     Stack newStack = new Stack();
     Queue newQueue = new Queue();
     @Test void testPushStack(){
@@ -89,5 +90,11 @@ class AppTest {
         assertEquals("dogs={ age=3, name='floki } -> NULL, cats={ age=4, name='fluffy } -> NULL",animalShelter.toString());
         animalShelter.dequeue("cat");
         assertTrue(animalShelter.cats.isEmpty());
+    }
+    @Test void testBracketValidation(){
+        assertTrue((Boolean) app.bracketValidation("{}(){}"));
+        assertTrue((Boolean) app.bracketValidation("{}{Code}[Fellows](())"));
+        assertFalse((Boolean) app.bracketValidation("{(})"));
+        assertEquals("there is nothing to check",app.bracketValidation(""));
     }
 }
