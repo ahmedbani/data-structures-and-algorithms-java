@@ -3,6 +3,7 @@
  */
 package stacks.queues;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class App {
@@ -94,5 +95,19 @@ public class App {
             return stack.isEmpty();
         }
         else return "there is nothing to check";
+    }
+    public String d(ArrayList<String> s, int k){
+            Queue queue = new Queue();
+            Node current = queue.front;
+            ArrayList<String> a = s;
+            while(true){
+                if (a.size()>1){
+                    for (int i =0 ; i<k ; i++){
+                        queue.enqueue(a.get(i));
+                    }
+                    a.remove(queue.peek());
+                }
+            }
+
     }
 }

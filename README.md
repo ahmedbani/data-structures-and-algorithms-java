@@ -15,3 +15,4 @@
 | Pseudo queue |[pseudo-queue](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
 | Animal shelter |[animal-shelter](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
 | brackets validation |[stack-queue-brackets](https://ahmedbani.github.io/data-structures-and-algorithms-java/stacks-queues)|
+| Trees |[BST](https://ahmedbani.github.io/data-structures-and-algorithms-java/trees)|
