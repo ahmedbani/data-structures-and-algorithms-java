@@ -21,11 +21,15 @@ public class App {
         bst.add(70);
         bst.add(60);
         bst.add(80);
+
+
         System.out.println(bst.preOrder(bst.root,arrayList));
         arrayList.clear();
         System.out.println(bst.inOrder(bst.root,arrayList));
         arrayList.clear();
         System.out.println(bst.postOrder(bst.root,arrayList));
         System.out.println(bst.contains(80));
+
+        System.out.println(bst.getMaxValue());
     }
 }

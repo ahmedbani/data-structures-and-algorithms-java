@@ -66,4 +66,15 @@ class AppTest {
         actualResult.add(50);
         assertEquals(actualResult, bst.postOrder(bst.root, list));
     }
+
+    @Test void testMaxValue(){
+        bst.add(50);
+        bst.add(30);
+        bst.add(20);
+        bst.add(40);
+        bst.add(70);
+        bst.add(60);
+        bst.add(80);
+        assertEquals(80,bst.getMaxValue());
+    }
 }
