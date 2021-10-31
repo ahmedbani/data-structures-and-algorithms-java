@@ -41,6 +41,20 @@ public class BinaryTree<T> {
         return postList;
     }
 
+    public Integer getMaxValue(){
+        Integer maxVal = 0;
+        ArrayList<Integer> list = new ArrayList();
+        if (getRoot() != null){
+            List<Integer> newarr = (List<Integer>) postOrder(this.getRoot(),list);
+            for (Integer i : newarr){
+                if (maxVal < (Integer) i){
+                    maxVal = (Integer) i;
+                }
+            }
+        }
+        return maxVal;
+    }
+
     @Override
     public String toString() {
         return "BinaryTree{" +

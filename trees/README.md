@@ -26,3 +26,38 @@ Time & Space complexity: O(n)
 
 - add method: takes a value as an argument, the value will be checked if its bigger than the root it will be stored in the right sub tree of the root and if it was less than the root it will be stored in left.  
 - contains method: takes a value as an argument and it will check whether this value is in the tree or not and return a boolean
+
+# Challenge Summary
+
+create a function that returns the maximum value in the tree  
+input: Tree  
+output: Integer  
+
+## Whiteboard Process
+
+![whiteboard](whiteboards/treeMax.png)
+
+## Approach & Efficiency
+
+complexity:  
+time complexity: O(n)  
+space complexity: O(1)  
+
+## Solution
+
+verification:  
+
+```java
+BST bst = new BST();  
+
+bst.add(50);  
+bst.add(30);  
+bst.add(20);  
+bst.add(40);  
+bst.add(70);  
+bst.add(60);  
+bst.add(80);  
+
+bst.getMaxValue(); // input  
+// output: 80
+```
