@@ -41,7 +41,7 @@ output: Integer
 
 complexity:  
 time complexity: O(n)  
-space complexity: O(1)  
+space complexity: O(n)  
 
 ## Solution
 
@@ -61,3 +61,39 @@ bst.add(80);
 bst.getMaxValue(); // input  
 // output: 80
 ```
+
+# Challenge Summary
+
+create a function that takes a tree as an argument and return list of all values in the tree, in the order they were encountered (Breadth-first approach)
+
+input: Tree  
+output: List   
+
+
+## Whiteboard Process
+
+![whiteboard](whiteboards/breadthFirst.png)
+
+## Approach & Efficiency
+
+complexity:  
+time complexity: O(n)  
+space complexity: O(n)  
+
+## Solution
+
+```java
+BST bst = new BST();
+
+bst.add(50);
+bst.add(30);
+bst.add(20);
+bst.add(40);
+bst.add(70);
+bst.add(60);
+bst.add(80);
+
+breadthFirst(bst); // input
+// output: [50,30,70,20,40,60,80]
+```
+

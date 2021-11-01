@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     BST bst = new BST();
+    App app = new App();
     @Test void testTree() {
 
         assertEquals("BinaryTree{root=null}", bst.toString());
@@ -76,5 +77,26 @@ class AppTest {
         bst.add(60);
         bst.add(80);
         assertEquals(80,bst.getMaxValue());
+    }
+
+    @Test void breadthFirst(){
+        ArrayList actualResult = new ArrayList();
+        assertEquals(actualResult,app.breadthFirst(bst));
+        bst.add(50);
+        bst.add(30);
+        bst.add(20);
+        bst.add(40);
+        bst.add(70);
+        bst.add(60);
+        bst.add(80);
+
+        actualResult.add(50);
+        actualResult.add(30);
+        actualResult.add(70);
+        actualResult.add(20);
+        actualResult.add(40);
+        actualResult.add(60);
+        actualResult.add(80);
+        assertEquals(actualResult,app.breadthFirst(bst));
     }
 }
