@@ -3,9 +3,7 @@
  */
 package trees;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class App {
 
@@ -13,6 +11,7 @@ public class App {
 
         BST bst = new BST();
         ArrayList arrayList = new ArrayList();
+        System.out.println(breadthFirst(bst));
 
         bst.add(50);
         bst.add(30);
@@ -31,5 +30,24 @@ public class App {
         System.out.println(bst.contains(80));
 
         System.out.println(bst.getMaxValue());
+        System.out.println(breadthFirst(bst));
+    }
+    public static List<Integer> breadthFirst(BinaryTree<Integer> tree){
+        List<Integer> result = new ArrayList<Integer>();
+        LinkedList<Node> queue = new LinkedList<>();
+        if (tree.getRoot() != null){
+            queue.add(tree.getRoot());
+            while(!queue.isEmpty()){
+                Node node = queue.remove();
+                result.add((Integer) node.getValue());
+                if(node.getLeft() != null){
+                    queue.add(node.getLeft());
+                }
+                if (node.getRight() != null){
+                    queue.add(node.getRight());
+                }
+            }
+        }
+        return result;
     }
 }
