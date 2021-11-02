@@ -97,3 +97,52 @@ breadthFirst(bst); // input
 // output: [50,30,70,20,40,60,80]
 ```
 
+# Challenge Summary
+
+Determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:  
+- If the value is divisible by 3, replace the value with “Fizz”
+- If the value is divisible by 5, replace the value with “Buzz”
+- If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+- If the value is not divisible by 3 or 5, simply turn the number into a String.
+
+input: k-ary tree  
+output: k-ary tree   
+
+
+## Whiteboard Process
+
+![whiteboard](whiteboards/fizzBuzz.png)
+
+## Approach & Efficiency
+
+complexity:  
+time complexity: O(n)  
+space complexity: O(n)  
+
+## Solution
+
+```java
+KaryTree karyTree = new KaryTree(3);
+Knode root = new Knode(10);
+Knode node1 = new Knode(7);
+Knode node2 = new Knode(15);
+Knode node3 = new Knode(3);
+Knode node4 = new Knode(8);
+Knode node5 = new Knode(13);
+Knode node6 = new Knode(20);
+
+karyTree.setRoot(root);
+
+root.getChildren().add(node1);
+root.getChildren().add(node2);
+
+node1.getChildren().add(node3);
+
+node2.getChildren().add(node4);
+node2.getChildren().add(node5);
+node2.getChildren().add(node6);
+
+fizzBuzz(karyTree);; // input
+// output: tree with values changed to fizz, buzz, ,fizzbuzz, "int"
+```
+

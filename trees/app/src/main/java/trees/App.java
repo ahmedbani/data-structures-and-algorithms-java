@@ -9,28 +9,52 @@ public class App {
 
     public static void main(String[] args) {
 
-        BST bst = new BST();
-        ArrayList arrayList = new ArrayList();
-        System.out.println(breadthFirst(bst));
+//        BST bst = new BST();
+//        ArrayList arrayList = new ArrayList();
+//        System.out.println(breadthFirst(bst));
+//
+//        bst.add(50);
+//        bst.add(30);
+//        bst.add(20);
+//        bst.add(40);
+//        bst.add(70);
+//        bst.add(60);
+//        bst.add(80);
+//
+//
+//        System.out.println(bst.preOrder(bst.root,arrayList));
+//        arrayList.clear();
+//        System.out.println(bst.inOrder(bst.root,arrayList));
+//        arrayList.clear();
+//        System.out.println(bst.postOrder(bst.root,arrayList));
+//        System.out.println(bst.contains(80));
+//
+//        System.out.println(bst.getMaxValue());
+//        System.out.println(breadthFirst(bst));
 
-        bst.add(50);
-        bst.add(30);
-        bst.add(20);
-        bst.add(40);
-        bst.add(70);
-        bst.add(60);
-        bst.add(80);
+        KaryTree karyTree = new KaryTree(3);
+        Knode root = new Knode(10);
+        Knode node1 = new Knode(7);
+        Knode node2 = new Knode(15);
+        Knode node3 = new Knode(3);
+        Knode node4 = new Knode(8);
+        Knode node5 = new Knode(13);
+        Knode node6 = new Knode(20);
+
+        karyTree.setRoot(root);
+
+        root.getChildren().add(node1);
+        root.getChildren().add(node2);
+
+        node1.getChildren().add(node3);
+
+        node2.getChildren().add(node4);
+        node2.getChildren().add(node5);
+        node2.getChildren().add(node6);
+
+        fizzBuzz(karyTree);
 
 
-        System.out.println(bst.preOrder(bst.root,arrayList));
-        arrayList.clear();
-        System.out.println(bst.inOrder(bst.root,arrayList));
-        arrayList.clear();
-        System.out.println(bst.postOrder(bst.root,arrayList));
-        System.out.println(bst.contains(80));
-
-        System.out.println(bst.getMaxValue());
-        System.out.println(breadthFirst(bst));
     }
     public static List<Integer> breadthFirst(BinaryTree<Integer> tree){
         List<Integer> result = new ArrayList<Integer>();
@@ -50,4 +74,38 @@ public class App {
         }
         return result;
     }
+    public static KaryTree fizzBuzz(KaryTree karyTree){
+        int k = karyTree.getK();
+        KaryTree newTree = new KaryTree(k);
+        newTree.setRoot(karyTree.getRoot());
+        if(newTree.getRoot() != null){
+            fizzBuzzRecursion(newTree.getRoot());
+        }else{
+            return null;
+        }
+        return newTree;
+    }
+
+    public static void fizzBuzzRecursion(Knode root){
+
+        if ((Integer) root.getValue() % 3 == 0 && (Integer) root.getValue() % 5 == 0 ){
+            root.setValue("FizzBuzz");
+        }
+        else if ((Integer) root.getValue() % 3 == 0 ){
+            root.setValue("Fizz");
+        }
+        else if ((Integer) root.getValue() % 5 == 0 ){
+            root.setValue("Buzz"); ;
+        }
+        else root.setValue((String)root.getValue());
+        System.out.println(root.getValue());
+
+        if(root.getChildren().isEmpty()){
+            return;
+        }
+        for(Object child : root.getChildren()){
+            fizzBuzzRecursion((Knode) child);
+        }
+    }
+
 }

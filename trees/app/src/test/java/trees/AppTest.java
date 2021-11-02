@@ -99,4 +99,36 @@ class AppTest {
         actualResult.add(80);
         assertEquals(actualResult,app.breadthFirst(bst));
     }
+    @Test
+    public void fizzbuzzTest(){
+        KaryTree karyTree = new KaryTree(3);
+        Knode root = new Knode(10);
+        Knode node1 = new Knode(7);
+        Knode node2 = new Knode(15);
+        Knode node3 = new Knode(3);
+        Knode node4 = new Knode(8);
+        Knode node5 = new Knode(13);
+        Knode node6 = new Knode(20);
+
+        karyTree.setRoot(root);
+
+        root.getChildren().add(node1);
+        root.getChildren().add(node2);
+
+        node1.getChildren().add(node3);
+
+        node2.getChildren().add(node4);
+        node2.getChildren().add(node5);
+        node2.getChildren().add(node6);
+
+        app.fizzBuzz(karyTree);
+
+        assertEquals("Buzz", root.getValue());
+        assertEquals("7", node1.getValue());
+        assertEquals("FizzBuzz", node2.getValue());
+        assertEquals("Fizz", node3.getValue());
+        assertEquals("8", node4.getValue());
+        assertEquals("13", node5.getValue());
+        assertEquals("Buzz", node6.getValue());
+    }
 }
