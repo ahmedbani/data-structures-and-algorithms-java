@@ -30,24 +30,7 @@ public class App {
         System.out.println(bst.contains(80));
 
         System.out.println(bst.getMaxValue());
-        System.out.println(breadthFirst(bst));
+        System.out.println(bst.breadthFirst(bst));
     }
-    public static List<Integer> breadthFirst(BinaryTree<Integer> tree){
-        List<Integer> result = new ArrayList<Integer>();
-        LinkedList<Node> queue = new LinkedList<>();
-        if (tree.getRoot() != null){
-            queue.add(tree.getRoot());
-            while(!queue.isEmpty()){
-                Node node = queue.remove();
-                result.add((Integer) node.getValue());
-                if(node.getLeft() != null){
-                    queue.add(node.getLeft());
-                }
-                if (node.getRight() != null){
-                    queue.add(node.getRight());
-                }
-            }
-        }
-        return result;
-    }
+    
 }
