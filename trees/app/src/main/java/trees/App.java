@@ -9,6 +9,32 @@ public class App {
 
     public static void main(String[] args) {
 
+
+        BST bst = new BST();
+        ArrayList arrayList = new ArrayList();
+        System.out.println(breadthFirst(bst));
+
+        bst.add(50);
+        bst.add(30);
+        bst.add(20);
+        bst.add(40);
+        bst.add(70);
+        bst.add(60);
+        bst.add(80);
+
+
+        System.out.println(bst.preOrder(bst.root,arrayList));
+        arrayList.clear();
+        System.out.println(bst.inOrder(bst.root,arrayList));
+        arrayList.clear();
+        System.out.println(bst.postOrder(bst.root,arrayList));
+        System.out.println(bst.contains(80));
+
+        System.out.println(bst.getMaxValue());
+        System.out.println(bst.breadthFirst(bst));
+    }
+    
+
 //        BST bst = new BST();
 //        ArrayList arrayList = new ArrayList();
 //        System.out.println(breadthFirst(bst));
@@ -56,24 +82,7 @@ public class App {
 
 
     }
-    public static List<Integer> breadthFirst(BinaryTree<Integer> tree){
-        List<Integer> result = new ArrayList<Integer>();
-        LinkedList<Node> queue = new LinkedList<>();
-        if (tree.getRoot() != null){
-            queue.add(tree.getRoot());
-            while(!queue.isEmpty()){
-                Node node = queue.remove();
-                result.add((Integer) node.getValue());
-                if(node.getLeft() != null){
-                    queue.add(node.getLeft());
-                }
-                if (node.getRight() != null){
-                    queue.add(node.getRight());
-                }
-            }
-        }
-        return result;
-    }
+   
     public static KaryTree fizzBuzz(KaryTree karyTree){
         int k = karyTree.getK();
         KaryTree newTree = new KaryTree(k);
@@ -107,5 +116,6 @@ public class App {
             fizzBuzzRecursion((Knode) child);
         }
     }
+
 
 }

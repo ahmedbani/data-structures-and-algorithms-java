@@ -97,7 +97,7 @@ class AppTest {
         actualResult.add(40);
         actualResult.add(60);
         actualResult.add(80);
-        assertEquals(actualResult,app.breadthFirst(bst));
+        assertEquals(actualResult,bst.breadthFirst(bst));
     }
     @Test
     public void fizzbuzzTest(){
