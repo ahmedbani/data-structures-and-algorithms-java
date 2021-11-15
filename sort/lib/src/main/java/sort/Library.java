@@ -5,8 +5,17 @@ package sort;
 
 public class Library {
     public static void main(String[] args) {
-        int[] testArr3 = {8, 4, 23, 42, 16, 15};
-        InsertionSort.insertionSort(testArr3);
+        int[] testArr = {8, 4, 23, 42, 16, 15};
+        InsertionSort.insertionSort(testArr);
+        int[] testArr1 = {8, 4, 23, 42, 16, 15};
+        int[] testArr2 = {20, 18, 12, 8, 5, -2};
+        int[] testArr3 = {5, 12, 7, 5, 5, 7};
+        int[] testArr4 = {2, 3, 5, 7, 13, 11};
+
+        MergeSort.mergeSort(testArr1);
+        MergeSort.mergeSort(testArr2);
+        MergeSort.mergeSort(testArr3);
+        MergeSort.mergeSort(testArr4);
 
     }
 }

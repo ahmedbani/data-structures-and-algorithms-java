@@ -20,3 +20,4 @@
 | Trees Breadth First |[breadthFirst](https://ahmedbani.github.io/data-structures-and-algorithms-java/trees)|
 | Trees fizz-buzz |[FizzBuzz](https://ahmedbani.github.io/data-structures-and-algorithms-java/trees)|
 | sorting |[InsertionSort](https://ahmedbani.github.io/data-structures-and-algorithms-java/sort)|
+| sorting |[MergeSort](https://ahmedbani.github.io/data-structures-and-algorithms-java/sort)|
