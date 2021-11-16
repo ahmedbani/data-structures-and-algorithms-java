@@ -12,10 +12,17 @@ public class Library {
         int[] testArr3 = {5, 12, 7, 5, 5, 7};
         int[] testArr4 = {2, 3, 5, 7, 13, 11};
 
-        MergeSort.mergeSort(testArr1);
-        MergeSort.mergeSort(testArr2);
-        MergeSort.mergeSort(testArr3);
-        MergeSort.mergeSort(testArr4);
+//        MergeSort.mergeSort(testArr1);
+//        MergeSort.mergeSort(testArr2);
+//        MergeSort.mergeSort(testArr3);
+//        MergeSort.mergeSort(testArr4);
+
+
+        QuickSort.quickSort(testArr1);
+        QuickSort.quickSort(testArr2);
+        QuickSort.quickSort(testArr3);
+        QuickSort.quickSort(testArr4);
+
 
     }
 }

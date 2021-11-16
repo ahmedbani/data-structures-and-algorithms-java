@@ -40,4 +40,26 @@ class LibraryTest {
         assertEquals("[5, 5, 5, 7, 7, 12]", Arrays.toString(MergeSort.mergeSort(testArr5)));
         assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(MergeSort.mergeSort(testArr6)));
     }
+    @Test void quickSortTest() {
+        int[] testArr1 = {};
+        int[] testArr2 = {55};
+        int[] testArr3 = {8, 4, 23, 42, 16, 15};
+        int[] testArr4 = {20, 18, 12, 8, 5, -2};
+        int[] testArr5 = {5, 12, 7, 5, 5, 7};
+        int[] testArr6 = {2, 3, 5, 7, 13, 11};
+
+        QuickSort.quickSort(testArr1);
+        QuickSort.quickSort(testArr2);
+        QuickSort.quickSort(testArr3);
+        QuickSort.quickSort(testArr4);
+        QuickSort.quickSort(testArr5);
+        QuickSort.quickSort(testArr6);
+
+        assertEquals("[]", Arrays.toString(testArr1));
+        assertEquals("[55]", Arrays.toString(testArr2));
+        assertEquals("[4, 8, 15, 16, 23, 42]", Arrays.toString(testArr3));
+        assertEquals("[-2, 5, 8, 12, 18, 20]", Arrays.toString(testArr4));
+        assertEquals("[5, 5, 5, 7, 7, 12]", Arrays.toString(testArr5));
+        assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(testArr6));
+    }
 }
