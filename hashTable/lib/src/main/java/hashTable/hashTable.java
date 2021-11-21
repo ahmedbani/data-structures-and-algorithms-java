@@ -66,4 +66,16 @@ public class hashTable<T> {
         }
         return false;
     }
+    public static String repeatedWord(String input){
+        String[] splitString = input.toLowerCase().split("[, ?.@]+", -1);
+        hashTable stringHashTable = new hashTable(50);
+        for(int i = 0 ; i < splitString.length ; i++){
+            if(stringHashTable.get(splitString[i]) != null){
+                return splitString[i];
+            }
+            stringHashTable.add(splitString[i], splitString[i]);
+        }
+        System.out.println(Arrays.toString(splitString));
+        return null;
+    }
 }
