@@ -22,3 +22,4 @@
 | sorting |[InsertionSort](https://ahmedbani.github.io/data-structures-and-algorithms-java/sort)|
 | sorting |[MergeSort](https://ahmedbani.github.io/data-structures-and-algorithms-java/sort)|
 | sorting |[QuickSort](https://ahmedbani.github.io/data-structures-and-algorithms-java/sort)|
+| hash Tables |[hashTable](https://ahmedbani.github.io/data-structures-and-algorithms-java/hashTable)|
