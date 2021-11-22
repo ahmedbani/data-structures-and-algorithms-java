@@ -56,3 +56,23 @@ Time & Space Complexity: O(n)
 - create a hash table
 - loop through the array of words and check if the index is empty add it to the hash table the key and value are the same word
 - else return the word in that index
+
+# Challenge 32: Tree Intersection
+
+Write a function called tree_intersection that takes two binary trees as parameters, Using your Hashmap implementation , return a set of values found in both trees.
+
+## Whiteboard Process
+
+![cc32](whiteBoards/cc32.png)
+
+## Approach & Efficiency
+
+Time & Space Complexity: O(n)
+
+## Solution
+
+- create a function that takes two binary trees and returns a list
+- create a hash table and a list for the duplicates
+- add the first tree to the hash table using recursion for the left and right children
+- then get the duplicates by using the second tree if its already in the hash table add it to the list else add it to the table using recursion for left and right
+- when it ends return the list that contains the duplicates

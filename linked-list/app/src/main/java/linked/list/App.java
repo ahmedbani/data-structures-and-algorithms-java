@@ -15,7 +15,7 @@ public class App {
         ahmedsLinkedList.insertBefore(5,34);
         ahmedsLinkedList.insertAfter(6,22);
 
-        System.out.println(ahmedsLinkedList.toString());
+//        System.out.println(ahmedsLinkedList.toString());
 
 //        System.out.println(ahmedsLinkedList.includes(3));
 
@@ -34,10 +34,10 @@ public class App {
 
         LinkedList zip = new LinkedList<Integer>();
 
-        System.out.println(zip);
+//        System.out.println(zip);
 
 
-        System.out.println(zip.zipLists(ahmedsLinkedList,newLinkedList));
+//        System.out.println(zip.zipLists(ahmedsLinkedList,newLinkedList));
 
     }
 }
