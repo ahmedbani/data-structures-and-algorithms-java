@@ -3,6 +3,9 @@
  */
 package hashTable;
 
+import hashTable.BinaryTree.BTnode;
+import hashTable.BinaryTree.BinaryTree;
+
 public class Library {
     public static void main(String[] args){
         hashTable hashTable = new hashTable(10);
@@ -20,9 +23,38 @@ public class Library {
                 "the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
         String input3 = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
         String input4 = " it was an amazing trip today";
-        System.out.println(hashTable.repeatedWord(input1));
-        System.out.println(hashTable.repeatedWord(input2));
-        System.out.println(hashTable.repeatedWord(input3));
-        System.out.println(hashTable.repeatedWord(input4));
+//        System.out.println(hashTable.repeatedWord(input1));
+//        System.out.println(hashTable.repeatedWord(input2));
+//        System.out.println(hashTable.repeatedWord(input3));
+//        System.out.println(hashTable.repeatedWord(input4));
+        BinaryTree bt1 = new BinaryTree();
+        bt1.setRoot(new BTnode(150));
+        bt1.getRoot().setLeft(new BTnode(100));
+        bt1.getRoot().getLeft().setLeft(new BTnode(75));
+        bt1.getRoot().getLeft().setRight(new BTnode(160));
+        bt1.getRoot().getLeft().getRight().setLeft(new BTnode(125));
+        bt1.getRoot().getLeft().getRight().setRight(new BTnode(175));
+        bt1.getRoot().setRight(new BTnode(250));
+        bt1.getRoot().getRight().setLeft(new BTnode(200));
+        bt1.getRoot().getRight().setRight(new BTnode(350));
+        bt1.getRoot().getRight().getRight().setLeft(new BTnode(300));
+        bt1.getRoot().getRight().getRight().setRight(new BTnode(500));
+
+        BinaryTree bt2 = new BinaryTree();
+        bt2.setRoot(new BTnode(42));
+        bt2.getRoot().setLeft(new BTnode(100));
+        bt2.getRoot().getLeft().setLeft(new BTnode(15));
+        bt2.getRoot().getLeft().setRight(new BTnode(160));
+        bt2.getRoot().getLeft().getRight().setLeft(new BTnode(125));
+        bt2.getRoot().getLeft().getRight().setRight(new BTnode(175));
+        bt2.getRoot().setRight(new BTnode(600));
+        bt2.getRoot().getRight().setLeft(new BTnode(200));
+        bt2.getRoot().getRight().setRight(new BTnode(350));
+        bt2.getRoot().getRight().getRight().setLeft(new BTnode(4)) ;
+        bt2.getRoot().getRight().getRight().setRight(new BTnode(500));
+
+
+        hashTable newHashTable = new hashTable(50);
+        System.out.println(newHashTable.treeIntersection(bt1, bt2));
     }
 }

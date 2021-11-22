@@ -1,5 +1,9 @@
 package hashTable;
 
+import hashTable.BinaryTree.BTnode;
+import hashTable.BinaryTree.BinaryTree;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -77,5 +81,37 @@ public class hashTable<T> {
         }
         System.out.println(Arrays.toString(splitString));
         return null;
+    }
+    public List<Integer> treeIntersection(BinaryTree firstTree, BinaryTree secondTree){
+        hashTable newHashTable = new hashTable(50);
+        List<Integer> duplicateList = new ArrayList<>();
+        addTreeToHash(firstTree.getRoot(), newHashTable);
+        getDuplicates(secondTree.getRoot(), duplicateList, newHashTable);
+        return duplicateList;
+    }
+
+    public void addTreeToHash(BTnode<T> visitedNode, hashTable newHashTable){
+        newHashTable.add(visitedNode.getData().toString(), visitedNode.getData());
+        if(visitedNode.getLeft() != null){
+            addTreeToHash(visitedNode.getLeft(), newHashTable);
+        }
+        if(visitedNode.getRight() != null){
+            addTreeToHash(visitedNode.getRight(), newHashTable);
+        }
+    }
+
+    public void getDuplicates(BTnode<T> visitedNode, List<Integer> duplicateList, hashTable newHashTable){
+        if(newHashTable.contains(visitedNode.getData().toString())){
+            duplicateList.add((int)visitedNode.getData());
+        }else{
+            newHashTable.add(visitedNode.getData().toString(), visitedNode.getData());
+        }
+
+        if(visitedNode.getLeft() != null){
+            getDuplicates(visitedNode.getLeft(), duplicateList, newHashTable);
+        }
+        if(visitedNode.getRight() != null){
+            getDuplicates(visitedNode.getRight(), duplicateList, newHashTable);
+        }
     }
 }

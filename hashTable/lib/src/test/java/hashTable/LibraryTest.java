@@ -3,11 +3,17 @@
  */
 package hashTable;
 
+import hashTable.BinaryTree.BTnode;
+import hashTable.BinaryTree.BinaryTree;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    hashTable hashTable = new hashTable(10);
+    hashTable hashTable = new hashTable(50);
     @Test void add(){
         hashTable.add("10", 10);
         hashTable.add("20", 20);
@@ -40,5 +46,42 @@ class LibraryTest {
         assertEquals("it",hashTable.repeatedWord(input2));
         assertEquals("summer",hashTable.repeatedWord(input3));
         assertEquals(null,hashTable.repeatedWord(input4));
+    }
+    @Test void treeIntersection(){
+        BinaryTree bt1 = new BinaryTree();
+        bt1.setRoot(new BTnode(150));
+        bt1.getRoot().setLeft(new BTnode(100));
+        bt1.getRoot().getLeft().setLeft(new BTnode(75));
+        bt1.getRoot().getLeft().setRight(new BTnode(160));
+        bt1.getRoot().getLeft().getRight().setLeft(new BTnode(125));
+        bt1.getRoot().getLeft().getRight().setRight(new BTnode(175));
+        bt1.getRoot().setRight(new BTnode(250));
+        bt1.getRoot().getRight().setLeft(new BTnode(200));
+        bt1.getRoot().getRight().setRight(new BTnode(350));
+        bt1.getRoot().getRight().getRight().setLeft(new BTnode(300));
+        bt1.getRoot().getRight().getRight().setRight(new BTnode(500));
+
+        BinaryTree bt2 = new BinaryTree();
+        bt2.setRoot(new BTnode(42));
+        bt2.getRoot().setLeft(new BTnode(100));
+        bt2.getRoot().getLeft().setLeft(new BTnode(15));
+        bt2.getRoot().getLeft().setRight(new BTnode(160));
+        bt2.getRoot().getLeft().getRight().setLeft(new BTnode(125));
+        bt2.getRoot().getLeft().getRight().setRight(new BTnode(175));
+        bt2.getRoot().setRight(new BTnode(600));
+        bt2.getRoot().getRight().setLeft(new BTnode(200));
+        bt2.getRoot().getRight().setRight(new BTnode(350));
+        bt2.getRoot().getRight().getRight().setLeft(new BTnode(4)) ;
+        bt2.getRoot().getRight().getRight().setRight(new BTnode(500));
+
+        List<Integer> list = new ArrayList<>();
+        list.add(100);
+        list.add(160);
+        list.add(125);
+        list.add(175);
+        list.add(200);
+        list.add(350);
+        list.add(500);
+        assertEquals(list,hashTable.treeIntersection(bt1,bt2));
     }
 }
