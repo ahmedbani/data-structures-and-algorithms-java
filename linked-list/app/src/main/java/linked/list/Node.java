@@ -7,6 +7,7 @@ public class Node<T> {
     public Node(T value) {
         this.value = value;
     }
+    public Node(){}
 
     public Node getNextNode() {
         return nextNode;
@@ -23,4 +24,5 @@ public class Node<T> {
     public void setValue(T value) {
         this.value = value;
     }
+
 }

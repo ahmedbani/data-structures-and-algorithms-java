@@ -25,3 +25,4 @@
 | hash Tables |[hashTable](https://ahmedbani.github.io/data-structures-and-algorithms-java/hashTable)|
 | hash Tables |[repeatedWords](https://ahmedbani.github.io/data-structures-and-algorithms-java/hashTable)|
 | hash Tables |[treeIntersection](https://ahmedbani.github.io/data-structures-and-algorithms-java/hashTable)|
+| hash Tables |[leftJoin](https://ahmedbani.github.io/data-structures-and-algorithms-java/hashTable)|

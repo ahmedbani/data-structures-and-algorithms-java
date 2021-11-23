@@ -76,3 +76,19 @@ Time & Space Complexity: O(n)
 - add the first tree to the hash table using recursion for the left and right children
 - then get the duplicates by using the second tree if its already in the hash table add it to the list else add it to the table using recursion for left and right
 - when it ends return the list that contains the duplicates
+
+# Hashmap LEFT JOIN
+<!-- Short summary or background information -->
+LEFT JOIN , returns all records from the left (first) table and the matched records from the right (second) table. If there is no match for a specific record, you'll get NULLs in the corresponding columns of the right table.
+
+## Challenge
+<!-- Description of the challenge -->
+Write a function that LEFT JOINs two hashmaps into a single data structure.
+
+## Approach & Efficiency
+
+Time & Space Complexity: O(n)
+
+## Solution
+<!-- Embedded whiteboard image -->
+![cc33](whiteBoards/cc33.png)
