@@ -5,9 +5,11 @@ package hashTable;
 
 import hashTable.BinaryTree.BTnode;
 import hashTable.BinaryTree.BinaryTree;
+import hashTable.LeftJoin.LeftJoin;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -83,5 +85,21 @@ class LibraryTest {
         list.add(350);
         list.add(500);
         assertEquals(list,hashTable.treeIntersection(bt1,bt2));
+    }
+    @Test
+    public void testLeftJoin(){
+        LeftJoin LL = new LeftJoin();
+        HashMap<Object, String> firstTable  = new HashMap<Object, String>();
+        firstTable.put("fond", "enamored");
+        firstTable.put("wrath", "anger");
+        firstTable.put("diligent", "employed");
+        firstTable.put("outift", "garb");
+        HashMap<Object, String> secondTable = new HashMap<Object, String>();
+        secondTable.put("fond", "averse");
+        secondTable.put("wrath", "delight");
+        secondTable.put("diligent", "idle");
+        secondTable.put("outift", "follow");
+
+        assertEquals("[diligent: employed& idle, wrath: anger& delight, outift: garb& follow, fond: enamored& averse]" , LL.leftJoin(firstTable,secondTable).toString());
     }
 }

@@ -5,6 +5,9 @@ package hashTable;
 
 import hashTable.BinaryTree.BTnode;
 import hashTable.BinaryTree.BinaryTree;
+import hashTable.LeftJoin.LeftJoin;
+
+import java.util.HashMap;
 
 public class Library {
     public static void main(String[] args){
@@ -56,5 +59,21 @@ public class Library {
 
         hashTable newHashTable = new hashTable(50);
         System.out.println(newHashTable.treeIntersection(bt1, bt2));
+
+        LeftJoin leftJoin = new LeftJoin();
+        HashMap<Object, String> firstTable  = new HashMap<Object, String>();
+        firstTable.put("fond", "enamored");
+        firstTable.put("wrath", "anger");
+        firstTable.put("diligent", "employed");
+        firstTable.put("outift", "garb");
+        firstTable.put("outif", "garb");
+        HashMap<Object, String> secondTable = new HashMap<Object, String>();
+        secondTable.put("fond", "averse");
+        secondTable.put("wrath", "delight");
+        secondTable.put("diligent", "idle");
+        secondTable.put("dilient", "idle");
+        secondTable.put("outift", "follow");
+
+        System.out.println(leftJoin.leftJoin(firstTable,secondTable));
     }
 }
