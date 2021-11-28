@@ -26,5 +26,6 @@ public class Library {
 
         System.out.println(graph.toString());
         System.out.println(graph.getNeighbors(n1));
+        System.out.println(graph.breadthFirst(n1));
     }
 }

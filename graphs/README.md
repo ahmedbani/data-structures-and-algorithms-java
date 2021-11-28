@@ -32,3 +32,42 @@ Include the weight of the connection in the returned collection
 - size()  
 Arguments: none
 Returns the total number of nodes in the graph
+
+
+# Challenge Summary
+<!-- Description of the challenge -->
+write a function called breadthFirst that takes in a node as an argument and returns A collection of nodes in the order they were visited.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![breadthFirst](whiteBoards/breadthFirst.png)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+complexity:  
+time: O(n^2)  
+space: O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+```java
+Graph graph = new Graph();
+        Node n1 = new Node("A");
+        Node n2 = new Node("B");
+        Node n3 = new Node("C");
+        Node n4 = new Node("D");
+
+        graph.addNode(n1);
+        graph.addNode(n2);
+        graph.addNode(n3);
+        graph.addNode(n4);
+
+        graph.addEdge(n1,n2);
+        graph.addEdge(n1,n3);
+        graph.addEdge(n1,n4);
+
+        graph.breadthFirst(n1)
+```
+
+**output**: [A, B, C, D]  
