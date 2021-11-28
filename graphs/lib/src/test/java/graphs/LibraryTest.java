@@ -26,5 +26,28 @@ class LibraryTest {
 
         assertEquals(4, graph.size()); //this will check if the size method works correctly
     }
+    @Test void graphBreadthFirstTest() {
+        Graph graph = new Graph();
+        Node n1 = new Node("A");
+        Node n2 = new Node("B");
+        Node n3 = new Node("C");
+        Node n4 = new Node("D");
+
+        graph.addNode(n1);
+        graph.addNode(n2);
+        graph.addNode(n3);
+        graph.addNode(n4);
+
+        assertEquals("[A]", graph.breadthFirst(n1).toString());
+        graph.addEdge(n1, n2);
+        assertEquals("[A, B]", graph.breadthFirst(n1).toString());
+        graph.addEdge(n1, n3);
+        assertEquals("[A, B, C]", graph.breadthFirst(n1).toString());
+        graph.addEdge(n1, n4);
+        assertEquals("[A, B, C, D]", graph.breadthFirst(n1).toString());
+        assertEquals("[B, C, D]", graph.breadthFirst(n2).toString());
+        assertEquals("[C, D]", graph.breadthFirst(n3).toString());
+        assertEquals("[D]", graph.breadthFirst(n4).toString());
+    }
 
 }
