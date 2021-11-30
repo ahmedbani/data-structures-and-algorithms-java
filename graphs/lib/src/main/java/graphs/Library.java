@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Library {
     public static void main(String[] args) {
-        Graph graph = new Graph();
+//        Graph graph = new Graph();
 //        Node n1 = new Node("A");
 //        Node n2 = new Node("B");
 //        Node n3 = new Node("C");
@@ -29,33 +29,66 @@ public class Library {
 //        System.out.println(graph.toString());
 //        System.out.println(graph.getNeighbors(n3));
 //        System.out.println(graph.breadthFirst(n1));
-        Node n1 = new Node("Pandora");
-        Node n2 = new Node("Arendelle");
-        Node n3 = new Node("Metroville");
-        Node n4 = new Node("Monstropolis");
-        Node n5 = new Node("Naboo");
-        Node n6 = new Node("Narnia");
+//        Node n1 = new Node("Pandora");
+//        Node n2 = new Node("Arendelle");
+//        Node n3 = new Node("Metroville");
+//        Node n4 = new Node("Monstropolis");
+//        Node n5 = new Node("Naboo");
+//        Node n6 = new Node("Narnia");
+//
+//        graph.addNode(n1);
+//        graph.addNode(n2);
+//        graph.addNode(n3);
+//        graph.addNode(n4);
+//        graph.addNode(n5);
+//        graph.addNode(n6);
+//
+//        graph.addEdge(n1,n2,150);
+//        graph.addEdge(n1,n3,82);
+//        graph.addEdge(n2,n3,99);
+//        graph.addEdge(n2,n4,42);
+//        graph.addEdge(n4,n3,105);
+//        graph.addEdge(n4,n5,73);
+//        graph.addEdge(n5,n3,26);
+//        graph.addEdge(n5,n6,250);
+//        graph.addEdge(n3,n6,37);
+//
+//        String [] cities = {"Arendelle","Monstropolis","Naboo"};
+//        String [] cities1 = {"Pandora","Naboo"};
+//        System.out.println(businessTrip(graph,cities1));
+        Graph<String> graph = new Graph<>();
 
-        graph.addNode(n1);
-        graph.addNode(n2);
-        graph.addNode(n3);
-        graph.addNode(n4);
-        graph.addNode(n5);
-        graph.addNode(n6);
+        Node a = new Node("A");
+        Node b =  new Node("B");
+        Node c = new Node("C");
+        Node d = new Node("D");
+        Node e = new Node("E");
+        Node f = new Node("F");
+        Node g = new Node("G");
+        Node h = new Node("H");
 
-        graph.addEdge(n1,n2,150);
-        graph.addEdge(n1,n3,82);
-        graph.addEdge(n2,n3,99);
-        graph.addEdge(n2,n4,42);
-        graph.addEdge(n4,n3,105);
-        graph.addEdge(n4,n5,73);
-        graph.addEdge(n5,n3,26);
-        graph.addEdge(n5,n6,250);
-        graph.addEdge(n3,n6,37);
+         graph.addNode(a);
+          graph.addNode(b);
+        graph.addNode(c);
+        graph.addNode(d);
+         graph.addNode(e);
+         graph.addNode(f);
+        graph.addNode(g);
+         graph.addNode(h);
 
-        String [] cities = {"Arendelle","Monstropolis","Naboo"};
-        String [] cities1 = {"Pandora","Naboo"};
-        System.out.println(businessTrip(graph,cities1));
+        graph.addEdge(a,b);
+        graph.addEdge(a,d);
+        graph.addEdge(b,c);
+        graph.addEdge(b,d);
+        graph.addEdge(c,g);
+        graph.addEdge(d,e);
+        graph.addEdge(d,h);
+        graph.addEdge(d,f);
+        graph.addEdge(h,f);
+
+
+        System.out.println(graph.depthFirst(a));
+        System.out.println(graph.toString());
 
     }
     public static String businessTrip(Graph graph, String[] cities){
