@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
+    Library lib;
     @Test void graphArrayListTest() {
         Graph graph = new Graph();
         Node n1 = new Node("A");
@@ -49,5 +50,35 @@ class LibraryTest {
         assertEquals("[C, D]", graph.breadthFirst(n3).toString());
         assertEquals("[D]", graph.breadthFirst(n4).toString());
     }
+    @Test void testTrip(){
+        Graph graph = new Graph();
+        Node n1 = new Node("Pandora");
+        Node n2 = new Node("Arendelle");
+        Node n3 = new Node("Metroville");
+        Node n4 = new Node("Monstropolis");
+        Node n5 = new Node("Naboo");
+        Node n6 = new Node("Narnia");
 
+        graph.addNode(n1);
+        graph.addNode(n2);
+        graph.addNode(n3);
+        graph.addNode(n4);
+        graph.addNode(n5);
+        graph.addNode(n6);
+
+        graph.addEdge(n1,n2,150);
+        graph.addEdge(n1,n3,82);
+        graph.addEdge(n2,n3,99);
+        graph.addEdge(n2,n4,42);
+        graph.addEdge(n4,n3,105);
+        graph.addEdge(n4,n5,73);
+        graph.addEdge(n5,n3,26);
+        graph.addEdge(n5,n6,250);
+        graph.addEdge(n3,n6,37);
+
+        String [] cities = {"Arendelle","Monstropolis","Naboo"};
+        String [] cities1 = {"Pandora","Naboo"};
+        assertEquals("False, $0",lib.businessTrip(graph,cities1));
+        assertEquals("True, $115",lib.businessTrip(graph,cities));
+    }
 }

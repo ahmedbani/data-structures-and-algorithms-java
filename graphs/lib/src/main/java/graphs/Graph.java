@@ -16,12 +16,15 @@ public class Graph<T> {
 
     public void addEdge(Node n1, Node n2){
         if(graphList.contains(n1) && graphList.contains(n2)){
-            Node current = n1;
-            while(current.next != null){
-                current = current.next;
-            }
-            current.next = n2;
-            System.out.println("RIGHT");
+            n1.addNeighbor(n2);
+            n2.addNeighbor(n1);
+        } else
+            System.out.println("One or more of the values are not valid...");
+    }
+    public void addEdge(Node n1, Node n2, int weight){
+        if(graphList.contains(n1) && graphList.contains(n2)){
+            n1.addNeighbor(n2,weight);
+            n2.addNeighbor(n1,weight);
         } else
             System.out.println("One or more of the values are not valid...");
     }
@@ -31,19 +34,28 @@ public class Graph<T> {
     }
 
     public List<Node<T>> getNeighbors(Node n){
-        List<Node<T>> edgeList = new ArrayList<>();
-        Node current = n;
-        while(current != null){
-            edgeList.add(current);
-            current = current.next;
-        }
-        return edgeList;
+        return n.neighbors;
     }
 
     public int size(){
         return graphList.size();
     }
 
+    public Node getNode(T value) {
+
+        Node arr[] = new Node[graphList.size()];
+        int j=0;
+        for(Node node:graphList){
+            arr[j] = node;
+            j++;
+        }
+        for(int i = 0 ; i < arr.length -1; i++) {
+            if (arr[i].value == value) {
+                return arr[i];
+            }
+        }
+        return null;
+    }
     @Override
     public String toString() {
         String result = "[";
