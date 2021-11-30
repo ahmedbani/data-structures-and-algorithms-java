@@ -7,6 +7,9 @@ public class Node<T> {
     T value;
     List<Edge> neighbors ;
 
+    Node(){
+
+    }
     Node(T value){
         this.value = value;
         this.neighbors = new ArrayList<>();

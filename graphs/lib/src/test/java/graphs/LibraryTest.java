@@ -4,6 +4,9 @@
 package graphs;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -80,5 +83,38 @@ class LibraryTest {
         String [] cities1 = {"Pandora","Naboo"};
         assertEquals("False, $0",lib.businessTrip(graph,cities1));
         assertEquals("True, $115",lib.businessTrip(graph,cities));
+    }
+    @Test void DFS(){
+        Graph<String> graph = new Graph<>();
+
+        Node a = new Node("A");
+        Node b =  new Node("B");
+        Node c = new Node("C");
+        Node d = new Node("D");
+        Node e = new Node("E");
+        Node f = new Node("F");
+        Node g = new Node("G");
+        Node h = new Node("H");
+
+        graph.addNode(a);
+        graph.addNode(b);
+        graph.addNode(c);
+        graph.addNode(d);
+        graph.addNode(e);
+        graph.addNode(f);
+        graph.addNode(g);
+        graph.addNode(h);
+
+        graph.addEdge(a,b);
+        graph.addEdge(a,d);
+        graph.addEdge(b,c);
+        graph.addEdge(b,d);
+        graph.addEdge(c,g);
+        graph.addEdge(d,e);
+        graph.addEdge(d,h);
+        graph.addEdge(d,f);
+        graph.addEdge(h,f);
+
+        assertEquals("[A, B, C, G, D, E, H, F]",graph.depthFirst(a).toString());
     }
 }

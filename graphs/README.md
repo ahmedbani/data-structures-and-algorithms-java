@@ -71,3 +71,21 @@ Graph graph = new Graph();
 ```
 
 **output**: [A, B, C, D]  
+
+# Depth First Traversal
+<!-- Short summary or background information -->
+DFS (Depth-first search) is technique used for traversing tree or graph. ... In this traversal first the deepest node is visited and then backtracks to it's parent node if no sibling of that node exist.
+
+## Challenge
+<!-- Description of the challenge -->
+write a function called depthFirst that takes in a node as an argument and returns collection of nodes in their pre-order depth-first traversal order.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+complexity:  
+time: O(n^2)  
+space: O(n)
+
+## Solution
+<!-- Embedded whiteboard image -->
+![depthFirst](whiteBoards/depthFirst.png)
