@@ -133,4 +133,53 @@ public class LinkedList<T> {
 
         }
     }
+
+    public void deleteAndInsert( T v , T v2){
+        Node current = head;
+        Node node = new Node(v2);
+        if(current.value == v){
+            node.nextNode = current.nextNode;
+            current.nextNode = null;
+            head = node;
+        }
+        else {
+            while (current.nextNode != null)
+            {
+                if (current.nextNode.value == v){
+                    node.nextNode = current.nextNode.nextNode;
+                    current.nextNode = node;
+                    return;
+                }
+                else current = current.nextNode;
+            }
+
+        }
+    }
+
+    public Node reverse(Node node){
+        Node prev = null;
+        Node current = node;
+        Node next = null;
+        while (current != null) {
+            next = current.nextNode;
+            current.nextNode = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        return node;
+    }
+    public int getFromEnd(int k){
+        reverse(head);
+        Node current = head;
+        int counter=1;
+        while(current!=null){
+            if(counter!= k) {
+                counter++;
+                current = current.nextNode;
+            }
+        }
+        return (int) current.value;
+    }
+
 }

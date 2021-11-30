@@ -3,29 +3,105 @@
  */
 package graphs;
 
+import java.util.List;
+
 public class Library {
     public static void main(String[] args) {
         Graph graph = new Graph();
-        Node n1 = new Node("A");
-        Node n2 = new Node("B");
-        Node n3 = new Node("C");
-        Node n4 = new Node("D");
+//        Node n1 = new Node("A");
+//        Node n2 = new Node("B");
+//        Node n3 = new Node("C");
+//        Node n4 = new Node("D");
+//
+//        graph.addNode(n1);
+//        graph.addNode(n2);
+//        graph.addNode(n3);
+//        graph.addNode(n4);
+
+//        System.out.println(graph.getNodes().toString());
+//        System.out.println(graph.size());
+//        graph.addEdge(n1,n2);
+//        graph.addEdge(n1,n3);
+//        graph.addEdge(n1,n4);
+//        System.out.println(graph.getNeighbors(n1));
+//        System.out.println(graph.getNeighbors(n2));
+//
+//        System.out.println(graph.toString());
+//        System.out.println(graph.getNeighbors(n3));
+//        System.out.println(graph.breadthFirst(n1));
+        Node n1 = new Node("Pandora");
+        Node n2 = new Node("Arendelle");
+        Node n3 = new Node("Metroville");
+        Node n4 = new Node("Monstropolis");
+        Node n5 = new Node("Naboo");
+        Node n6 = new Node("Narnia");
 
         graph.addNode(n1);
         graph.addNode(n2);
         graph.addNode(n3);
         graph.addNode(n4);
+        graph.addNode(n5);
+        graph.addNode(n6);
 
-        System.out.println(graph.getNodes().toString());
-        System.out.println(graph.size());
-        graph.addEdge(n1,n2);
-        graph.addEdge(n1,n3);
-        graph.addEdge(n1,n4);
-        System.out.println(graph.getNeighbors(n1));
-        System.out.println(graph.getNeighbors(n2));
+        graph.addEdge(n1,n2,150);
+        graph.addEdge(n1,n3,82);
+        graph.addEdge(n2,n3,99);
+        graph.addEdge(n2,n4,42);
+        graph.addEdge(n4,n3,105);
+        graph.addEdge(n4,n5,73);
+        graph.addEdge(n5,n3,26);
+        graph.addEdge(n5,n6,250);
+        graph.addEdge(n3,n6,37);
 
-        System.out.println(graph.toString());
-        System.out.println(graph.getNeighbors(n1));
-        System.out.println(graph.breadthFirst(n1));
+        String [] cities = {"Arendelle","Monstropolis","Naboo"};
+        String [] cities1 = {"Pandora","Naboo"};
+        System.out.println(businessTrip(graph,cities1));
+
+    }
+    public static String businessTrip(Graph graph, String[] cities){
+        if(cities.length <=1){
+            return null;
+        }
+        int cost = 0;
+        for (int i =0 ; i< cities.length-1 ; i++){
+            Node src = graph.getNode(cities[i]);
+            Node dest = graph.getNode(cities[i+1]);
+
+            Edge edge = getEdge(src, dest);
+            if ( edge == null)
+                return "False, $0";
+
+            cost += edge.weight;
+        }
+        return "True, $"+cost;
+    }
+
+    private static Edge getEdge(Node src, Node dest) {
+        boolean indexOfEdge = isThereDirectFlightbetweenTheCity(src, dest);
+        if(indexOfEdge == false)
+            return null;
+        else {
+            List<Edge> arr =  src.neighbors;
+
+            for(int i = 0 ; i <= arr.size() -1; i++) {
+                if (arr.get(i).dest == dest) {
+                    return arr.get(i);
+                }
+            }
+            return null;
+        }
+    }
+
+
+    private static boolean isThereDirectFlightbetweenTheCity(Node src, Node dest) {
+        List<Edge> arr =  src.neighbors;
+
+        for(int i = 0 ; i <= arr.size() -1; i++) {
+            if (arr.get(i).dest == dest) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
